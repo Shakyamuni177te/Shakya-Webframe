@@ -1,8 +1,92 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+
+/* basic elements */
+html {
+	margin: 0;
+	padding: 0;
+	}
+body { 
+	font: 75% georgia, sans-serif;
+	line-height: 1.88889;
+	color: #555753; 
+	margin: 0; 
+	padding: 0;
+	}
+p { 
+	margin-top: 0; 
+	text-align: justify;
+	}
+h3 { 
+	font: italic normal 1.4em georgia, sans-serif;
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color: #7D775C;
+	}
+h1 { 
+	font: bold normal 2eme georgia, sans-serif;
+	letter-spacing: 1px; 
+	color: #0D775F;
+	display: inline-block;
+	padding-left: 5em;
+	}
+a:link { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #B7A5DF;
+	}
+a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #D4CDDC;
+	}
+a:hover, a:focus, a:active { 
+	text-decoration: underline; 
+	color: #9685BA;
+	}
+abbr {
+	border-bottom: none;
+	}
+
+
+/* specific divs */
+#topbar {
+background: #153e5e;
+height: 120px;
+width: 2090px;
+}
+#left-sidebar {
+background: #153e5e;
+height: 2090px;
+width: 240px;
+}
+.innerLogo {
+display: inline-block;
+margin-top: 0; 
+vertical-align: middle;
+line-height: 150px; 
+margin-left: 40px;
+}
+.innerHeader {
+display: inline-block;
+margin-top: 0;
+text-align: center;
+vertical-align: middle;
+margin-bottom: 30px;
+color: #DBBD65;
 }
 
-a {
-  color: #00B7FF;
-}
+/* Junk code; left in for later
+.innerHeaderRed{
+display: inline-block;
+margin-top: 0;
+text-align: center;
+font: italic;
+}*/
