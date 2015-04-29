@@ -6,7 +6,7 @@ module.exports = function (db) {
 
     /* GET home page. */
     router.get('/', function(req, res) {
-        res.render('index', { title: 'First Test' });
+        res.render('index');
     });
 
     /* GET Userlist page. */

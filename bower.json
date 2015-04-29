@@ -1,0 +1,22 @@
+{
+  "name": "Shakya-Webframe",
+  "version": "0.0.3",
+  "homepage": "https://github.com/Shakyamuni177te/Shakya-Webframe",
+  "authors": [
+    "Shakyamuni177te <peter.carter.mail@gmail.com>"
+  ],
+  "description": "A basic webframe.",
+  "main": "public/js/script.js",
+  "keywords": [
+    "web",
+    "framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
