@@ -16,18 +16,20 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('jade', consolidate.jade);
-app.set('view engine', 'jade')
+app.engine('html', consolidate.underscore);
+app.set('view engine', 'html')
 
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+// load global favicon
+app.use(favicon(__dirname + '/public/img/logosmall1.png'));
+// load dependencies
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// set basic routing files addresses
 app.use('/', routes);
 app.use('/users', users);
 
