@@ -21,7 +21,7 @@ app.set('view engine', 'html')
 
 
 // load global favicon
-app.use(favicon(__dirname + '/public/img/logosmall1.png'));
+app.use(favicon(__dirname + '/public/img/nakeLogoMale.png'));
 // load dependencies
 app.use(logger('dev'));
 app.use(bodyParser.json());

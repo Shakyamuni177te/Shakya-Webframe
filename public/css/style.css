@@ -44,22 +44,17 @@ abbr {
 
 /* specific divs */
 #topbar {
-background: #153e5e;
-height: 51px;
+background: #3c599b;
+height: 38px;
 width: 2090px;
-border-color: #466E8D;
-border-width: 1px;
-border-style: dotted;
+border-bottom-color: black;
+border-bottom-style: solid;
 }
 #left-sidebar {
-background: #153e5e;
+background: #3c599b;
 height: 2090px;
 width: 225px;
 position: absolute;
-border-right-color: #466E8D;
-border-right-width: 1px;
-border-right-style: solid;
-border-right-style: dotted;
 }
 #title-area {
 display: block;
@@ -69,15 +64,10 @@ height: 2090px;
 }
 #navigation-bar {
 position: relative;
-margin-right: 250px;
-margin-left: 250px;
-width: 350px; 
-padding: 10px;
-border-color: grey;
-border-top-width: 2px;
-border-top-style: solid;
-border-bottom-width: 2px;
-border-bottom-style: solid;
+top: 100px;
+margin-right: auto;
+margin-left: auto;
+width: 500px; 
 }
 #main-content {
 display: block;
@@ -86,16 +76,14 @@ margin-right: 250px;
 margin-left: 250px;
 }
 .title {
-position: relative;
-margin-right: 250px;
-margin-left: 250px;
+
 }
 .sidebar-text {
 margin-left: 2em;
 }
 .innerLogo {
-display: inline-block;
-left: 12px;
+display: inline;
 position: relative;
-top: 8px;
+margin-left: 50px;
+top: 2px;
 }

@@ -21,19 +21,19 @@ app.module('RouteTest', function(module, App, Backbone, Marionette, $, _){
 		},
 		ui: {
 			'navHome' : '#nav-home',
-			'navSkills' : '#nav-skills',
-			'navResources' : '#nav-resources',
-			'navPeople' : '#nav-people',
+			'navMembers' : '#nav-members',
+			'navAlbum' : '#nav-album',
+			'navNewsfeed' : '#nav-newsfeed',
 			'navContact' : '#nav-contact',
-			'navAbout' : '#nav-about'
+			'navMore' : '#nav-more'
 		},
 		events: {
 			'click #nav-home' : 'onNavHomeClicked',
-			'click #nav-skills' : 'onNavSkillsClicked',
-			'click #nav-resources' : 'onNavResourcesClicked',
-			'click #nav-people' : 'onNavPeopleClicked',
+			'click #nav-members' : 'onNavMembersClicked',
+			'click #nav-album' : 'onNavAlbumClicked',
+			'click #nav-newsfeed' : 'onNewsfeedClicked',
 			'click #nav-contact' : 'onNavContactClicked',
-			'click #nav-about' : 'onNavAboutClicked'
+			'click #nav-more' : 'onNavMoreClicked'
 		},
 
 		/* when the view initializes, call initRouter to */
@@ -65,30 +65,30 @@ app.module('RouteTest', function(module, App, Backbone, Marionette, $, _){
 				appRoutes: {
     					'' : 'onHomeRoute',
     				'home' : 'onHomeRoute',
-    				'skills' : 'onSkillsRoute',
-    				'resources' : 'onResourcesRoute',
-    				'people' : 'onPeopleRoute',
+    				'members' : 'onMembersRoute',
+    				'album' : 'onAlbumRoute',
+    				'newsfeed' : 'onNewsfeedRoute',
     				'contact' : 'onContactRoute',
-    				'about' : 'onAboutRoute'
+    				'more' : 'onMoreRoute'
     			},
 				controller: {
     				onHomeRoute: function() {
     					capturedThis.onHomeNavigated();
     				},
-    				onSkillsRoute: function() {
-    					capturedThis.onSkillsNavigated();
+    				onMembersRoute: function() {
+    					capturedThis.onMembersNavigated();
     				},
-    				onResourcesRoute: function() {
-    					capturedThis.onResourcesNavigated();
+    				onAlbumRoute: function() {
+    					capturedThis.onAlbumNavigated();
     				},
-    				onPeopleRoute: function() {
-    					capturedThis.onPeopleNavigated();
+    				onNewsfeedRoute: function() {
+    					capturedThis.onNewsfeedNavigated();
     				},
     				onContactRoute: function() {
     					capturedThis.onContactNavigated();
     				},
-    				onAboutRoute: function() {
-    					capturedThis.onAboutNavigated();
+    				onMoreRoute: function() {
+    					capturedThis.onMoreNavigated();
     				}
     			}
 			});
@@ -107,17 +107,23 @@ app.module('RouteTest', function(module, App, Backbone, Marionette, $, _){
 			this.ui.navHome.addClass('active');
 		},
 
-		onSkillsNavigated: function() {
-			var layoutView = new module.SkillsLayoutView();
+		onMembersNavigated: function() {
+			var layoutView = new module.MembersLayoutView();
 			this.contentRegion.show(layoutView);
 			this.$el.find('.navButton.active').removeClass('active');
-			this.ui.navSkills.addClass('active');
+			this.ui.navMembers.addClass('active');
 		},
-		onResourcesNavigated: function() {
-			var layoutView = new module.ResourcesLayoutView();
+		onAlbumNavigated: function() {
+			var layoutView = new module.AlbumLayoutView();
 			this.contentRegion.show(layoutView);
 			this.$el.find('.navButton.active').removeClass('active');
-			this.ui.navResources.addClass('active');
+			this.ui.navAlbum.addClass('active');
+		},
+		onNewsfeedNavigated: function() {
+			var layoutView = new module.NewsfeedLayoutView();
+			this.contentRegion.show(layoutView);
+			this.$el.find('.navButton.active').removeClass('active');
+			this.ui.navNewsfeed.addClass('active');
 		},
 		onContactNavigated: function() {
 			var layoutView = new module.ContactLayoutView();
@@ -125,20 +131,15 @@ app.module('RouteTest', function(module, App, Backbone, Marionette, $, _){
 			this.$el.find('.navButton.active').removeClass('active');
 			this.ui.navContact.addClass('active');
 		},
-		onPeopleNavigated: function() {
-			var layoutView = new module.PeopleLayoutView();
+		onMoreNavigated: function() {
+			var layoutView = new module.MoreLayoutView();
 			this.contentRegion.show(layoutView);
 			this.$el.find('.navButton.active').removeClass('active');
-			this.ui.navPeople.addClass('active');
-		},
-		onAboutNavigated: function() {
-			var layoutView = new module.AboutLayoutView();
-			this.contentRegion.show(layoutView);
-			this.$el.find('.navButton.active').removeClass('active');
-			this.ui.navAbout.addClass('active');
+			this.ui.navMore.addClass('active');
 		}
 	});
-
+    
+	
 	module.HomeLayoutView = Marionette.LayoutView.extend({
 		tagName: 'div',
 		id: 'HomeLayoutView',
@@ -146,25 +147,25 @@ app.module('RouteTest', function(module, App, Backbone, Marionette, $, _){
 		template: '#template-HomeLayoutView'
 	});
 
-	module.SkillsLayoutView = Marionette.LayoutView.extend({
+	module.MembersLayoutView = Marionette.LayoutView.extend({
 		tagName: 'div',
-		id: 'SkillsLayoutView',
+		id: 'MembersLayoutView',
 		className: 'contentLayout',
-		template: '#template-SkillsLayoutView'
+		template: '#template-MembersLayoutView'
 	});
 
-	module.ResourcesLayoutView = Marionette.LayoutView.extend({
+	module.AlbumLayoutView = Marionette.LayoutView.extend({
 		tagName: 'div',
-		id: 'ResourcesLayoutView',
+		id: 'AlbumLayoutView',
 		className: 'contentLayout',
-		template: '#template-ResourcesLayoutView'
+		template: '#template-AlbumLayoutView'
 	});
 
-	module.PeopleLayoutView = Marionette.LayoutView.extend({
+	module.NewsfeedLayoutView = Marionette.LayoutView.extend({
 		tagName: 'div',
-		id: 'PeopleLayoutView',
+		id: 'NewsfeedLayoutView',
 		className: 'contentLayout',
-		template: '#template-PeopleLayoutView'
+		template: '#template-NewsfeedLayoutView'
 	});
 
 	module.ContactLayoutView = Marionette.LayoutView.extend({
@@ -174,11 +175,11 @@ app.module('RouteTest', function(module, App, Backbone, Marionette, $, _){
 		template: '#template-ContactLayoutView'
 	});
 
-	module.AboutLayoutView = Marionette.LayoutView.extend({
+	module.MoreLayoutView = Marionette.LayoutView.extend({
 		tagName: 'div',
-		id: 'AboutLayoutView',
+		id: 'MoreLayoutView',
 		className: 'contentLayout',
-		template: '#template-AboutLayoutView'
+		template: '#template-MoreLayoutView'
 	});
 
 	/* add initializer, which fires when the app starts */
